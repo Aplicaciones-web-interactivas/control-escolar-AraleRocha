@@ -7,9 +7,11 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
-    <nav>
-        <ul>
-            <li><a href="{{ route('index.materias') }}">Materias</a></li>
+    <nav class="bg-white shadow-md py-4 px-6">
+        <ul class="flex space-x-6">
+            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.materias') }}">Materias</a></li>
+            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.grupos') }}">Grupos</a></li>
+            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.horarios') }}">Horarios</a></li>
         </ul>
     </nav>
     <div class="container mx-auto py-12">

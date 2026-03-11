@@ -41,7 +41,7 @@ class loginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            return redirect('/login');
+            return redirect('/admin/materias');
         }
 
         return back()->with('error', 'Clave o contraseña incorrecta o usuario inactivo.')->onlyInput('clave_institucional');

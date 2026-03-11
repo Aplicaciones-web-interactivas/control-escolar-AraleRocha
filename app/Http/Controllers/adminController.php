@@ -7,6 +7,7 @@ use App\Models\materia;
 
 class adminController extends Controller
 {
+    //Controlador para materias
     public function indexMaterias()
     {
         $materias = Materia::all();
