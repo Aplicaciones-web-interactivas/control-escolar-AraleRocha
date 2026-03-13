@@ -1,40 +1,49 @@
 @extends('layouts.app')
 @section('content')
-<div>
-    <div>
-        <form action="{{ route('save.materia') }}" method="POST">
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+    <div class="bg-white shadow rounded p-5">
+        <h2 class="text-xl font-semibold mb-4">Agregar materia</h2>
+        <form action="{{ route('save.materia') }}" method="POST" class="space-y-3">
             @csrf
             <div>
-                <input type="text" name="nombre" placeholder="Nombre de la materia" required class="border p-2 rounded w-full" />
-                <input type="text" name="clave" placeholder="Código de la materia" required class="border p-2 rounded w-full mt-2" />
+                <input type="text" name="nombre" placeholder="Nombre de la materia" required class="border p-2 rounded w-full">
+                <input type="text" name="clave" placeholder="Código de la materia" required class="border p-2 rounded w-full mt-2">
             </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Agregar Materia</button>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full"> Agregar Materia</button>
         </form>
     </div>
-    <div>
-        <table>
-            <thead>
+    <div class="bg-white shadow rounded p-5 overflow-x-auto">
+        <h3 class="text-lg font-medium mb-3">Materias</h3>
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
                 <tr>
-                    <th>Nombre</th>
-                    <th>Código</th>
-                    <th>Acciones</th>
+                    <th class="px-4 py-2 text-left text-sm">Nombre</th>
+                    <th class="px-4 py-2 text-left text-sm">Código</th>
+                    <th class="px-4 py-2 text-left text-sm">Acciones</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="divide-y">
                 @foreach($materias as $materia)
-                <tr>
-                    <td>{{ $materia->nombre }}</td>
-                    <td>{{ $materia->clave }}</td>
-                    <td>
-                        <form action="{{ route('delete.materia', ['id' => $materia->id]) }}" method="POST" style="display: inline;">
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2 text-sm">{{ $materia->nombre }}</td>
+                    <td class="px-4 py-2 text-sm">{{ $materia->clave }}</td>
+                    <td class="px-4 py-2 text-sm">
+                        <form action="{{ route('delete.materia', ['id' => $materia->id]) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Eliminar</button>
+                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded text-xs">Eliminar</button>
                         </form>
-                        <a href="{{ route('edit.materia', ['id' => $materia->id]) }}" class="bg-yellow-500 text-white px-2 py-1 rounded">Modificar</a>
+                        <a href="{{ route('edit.materia', ['id' => $materia->id]) }}" class="bg-yellow-500 text-white px-2 py-1 rounded text-xs ml-2">Modificar</a>
                     </td>
                 </tr>
                 @endforeach
+
+                @if($materias->isEmpty())
+                    <tr>
+                        <td colspan="3" class="px-4 py-6 text-center text-gray-500">No hay materias registradas.</td>
+                    </tr>
+                @endif
+
             </tbody>
         </table>
     </div>
