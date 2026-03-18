@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\adminHyG_Controller;
+use App\Http\Controllers\adminCalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -43,3 +44,10 @@ Route::post('/admin/horario',[adminHyG_Controller::class,'saveHorario'])->name('
 Route::delete('/admin/eliminarhorario/{id}',[adminHyG_Controller::class,'deleteHorario'])->name('delete.horario');
 Route::get('/admin/modificarhorario/{id}',[adminHyG_Controller::class,'editHorario'])->name('edit.horario');
 Route::put('/admin/horario/{id}',[adminHyG_Controller::class,'updateHorario'])->name('update.horario');
+
+//Rutas para calificaciones
+Route::get('/admin/calificaciones',[adminCalController::class,'indexCalificaciones'])->name('index.calificaciones');
+Route::post('/admin/calificacion',[adminCalController::class,'saveCalificacion'])->name('save.calificacion');
+Route::delete('/admin/eliminarcalificacion/{id}',[adminCalController::class,'deleteCalificacion'])->name('delete.calificacion');
+Route::get('/admin/modificarcalificacion/{id}',[adminCalController::class,'editCalificacion'])->name('edit.calificacion');
+Route::put('/admin/calificacion/{id}',[adminCalController::class,'updateCalificacion'])->name('update.calificacion');
