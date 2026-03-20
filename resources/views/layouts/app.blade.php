@@ -12,6 +12,7 @@
             <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.materias') }}">Materias</a></li>
             <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.grupos') }}">Grupos</a></li>
             <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.horarios') }}">Horarios</a></li>
+            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.inscripciones') }}">Inscripciones</a></li>
             <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.calificaciones') }}">Calificaciones</a></li>
         </ul>
     </nav>

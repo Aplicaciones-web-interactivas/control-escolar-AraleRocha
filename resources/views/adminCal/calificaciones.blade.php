@@ -9,7 +9,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm text-gray-700 mb-1">Grupos:</label>
-                    <select name="grupo_id" required class="border p-2 rounded w-full">
+                    <select id="grupo_id" name="grupo_id" required class="border p-2 rounded w-full">
                         <option value="">Seleccionar grupo</option>
                         @foreach($grupos as $grupo)
                             <option value="{{ $grupo->id }}">{{ $grupo->nombre }}</option>
@@ -18,16 +18,14 @@
                 </div>
                 <div>
                     <label class="block text-sm text-gray-700 mb-1">Usuario:</label>
-                    <select name="usuario_id" required class="border p-2 rounded w-full">
+                    <select id="usuario_id" name="usuario_id" required class="border p-2 rounded w-full">
                         <option value="">Seleccionar usuario</option>
-                        @foreach($users as $usuario)
-                            <option value="{{ $usuario->id }}">{{ $usuario->name }}</option>
-                        @endforeach
+                        
                     </select>
                 </div>
                 <div>
                     <label class="block text-sm text-gray-700 mb-1">Calificacion:</label>
-                    <input type="float" name="calificacion" placeholder="10" required class="border p-2 rounded w-full" />
+                    <input type="number" name="calificacion" placeholder="10" min='0' max='10' step='0.1' required class="border p-2 rounded w-full" />
                 </div>
             </div>
             <div class="pt-2">
@@ -77,4 +75,23 @@
     </div>
 
 </div>
+<script>
+// Cargar usuarios por grupo para el select de usuarios
+const usuariosPorGrupo = @json($usuariosPorGrupo);
+
+document.getElementById('grupo_id').addEventListener('change', function() {
+    const grupoId = this.value;
+    const selectUsuarios = document.getElementById('usuario_id');
+    selectUsuarios.innerHTML = '<option value="">Selecciona usuario</option>';
+    // Cargar usuarios del grupo seleccionado
+    if (usuariosPorGrupo[grupoId]) {
+        usuariosPorGrupo[grupoId].forEach(usuario => {
+            const option = document.createElement('option');
+            option.value = usuario.user_id;
+            option.textContent = usuario.name;
+            selectUsuarios.appendChild(option);
+        });
+    }
+});
+</script>
 @endsection

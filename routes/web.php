@@ -51,3 +51,10 @@ Route::post('/admin/calificacion',[adminCalController::class,'saveCalificacion']
 Route::delete('/admin/eliminarcalificacion/{id}',[adminCalController::class,'deleteCalificacion'])->name('delete.calificacion');
 Route::get('/admin/modificarcalificacion/{id}',[adminCalController::class,'editCalificacion'])->name('edit.calificacion');
 Route::put('/admin/calificacion/{id}',[adminCalController::class,'updateCalificacion'])->name('update.calificacion');
+
+//Rutas para inscripciones
+Route::get('/admin/inscripciones',[adminCalController::class,'indexInscripciones'])->name('index.inscripciones');
+Route::post('/admin/inscripcion',[adminCalController::class,'saveInscripcion'])->name('save.inscripcion');
+Route::delete('/admin/eliminarinscripcion/{id}',[adminCalController::class,'deleteInscripcion'])->name('delete.inscripcion');
+Route::get('/admin/modificarinscripcion/{id}',[adminCalController::class,'editInscripcion'])->name('edit.inscripcion');
+Route::put('/admin/inscripcion/{id}',[adminCalController::class,'updateInscripcion'])->name('update.inscripcion');
