@@ -10,6 +10,9 @@ Route::get('/', function () {
     return redirect('login');
 });
 
+// ruta de bienvenida
+Route::get('/admin/home', [LoginController::class,'showHome'])->name('home');
+
 // Rutas de autenticación
 Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
 Route::post('/login',[LoginController::class,'login'])->name('login.post');
@@ -17,7 +20,7 @@ Route::post('/login',[LoginController::class,'login'])->name('login.post');
 Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [LoginController::class, 'register'])->name('register.post');
 
-
+// Ruta de cierre de sesión
 Route::post('/logout',[LoginController::class,'logout'])->name('logout');
 
 // Rutas para materias

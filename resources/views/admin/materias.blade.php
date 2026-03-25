@@ -14,7 +14,7 @@
     </div>
     <div class="bg-white shadow rounded p-5 overflow-x-auto">
         <h3 class="text-lg font-medium mb-3">Materias</h3>
-        <table class="min-w-full divide-y divide-gray-200">
+        <table class="min-w-full">
             <thead class="bg-gray-50">
                 <tr>
                     <th class="px-4 py-2 text-left text-sm">Nombre</th>
@@ -22,7 +22,7 @@
                     <th class="px-4 py-2 text-left text-sm">Acciones</th>
                 </tr>
             </thead>
-            <tbody class="divide-y">
+            <tbody>
                 @foreach($materias as $materia)
                 <tr class="hover:bg-gray-50">
                     <td class="px-4 py-2 text-sm">{{ $materia->nombre }}</td>
@@ -31,9 +31,9 @@
                         <form action="{{ route('delete.materia', ['id' => $materia->id]) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded text-xs">Eliminar</button>
+                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded text-xs"><i class="fa-solid fa-trash"></i></button>
                         </form>
-                        <a href="{{ route('edit.materia', ['id' => $materia->id]) }}" class="bg-yellow-500 text-white px-2 py-1 rounded text-xs ml-2">Modificar</a>
+                        <a href="{{ route('edit.materia', ['id' => $materia->id]) }}" class="bg-yellow-500 text-white px-2 py-1 rounded text-xs ml-2"><i class="fa-solid fa-pen"></i></a>
                     </td>
                 </tr>
                 @endforeach

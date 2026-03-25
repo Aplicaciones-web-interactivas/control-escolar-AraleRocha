@@ -47,9 +47,9 @@
                             <form action="{{ route('delete.grupo', ['id' => $grupo->id]) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs">Eliminar</button>
+                                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs"><i class="fa-solid fa-trash"></i></button>
                             </form>
-                            <a href="{{ route('edit.grupo', ['id' => $grupo->id]) }}" class="inline-block ml-2 bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded text-xs">Modificar</a>
+                            <a href="{{ route('edit.grupo', ['id' => $grupo->id]) }}" class="inline-block ml-2 bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded text-xs"><i class="fa-solid fa-pen"></i></a>
                         </td>
                     </tr>
                     @endforeach
