@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-w-6xl mx-auto p-6 space-y-6">
-    
+    <!-- Contenido de relleno solo para que se envie a otra lado cuando se registre -->
     <div class="bg-white shadow-md rounded-lg p-8">
         <div class="flex items-center justify-between">
             <div>
@@ -14,6 +14,5 @@
             </div>
         </div>
     </div>
-
 </div>
 @endsection

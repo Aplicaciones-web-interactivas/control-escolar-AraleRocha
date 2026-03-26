@@ -6,8 +6,10 @@
         <form action="{{ route('save.materia') }}" method="POST" class="space-y-3">
             @csrf
             <div>
-                <input type="text" name="nombre" placeholder="Nombre de la materia" required class="border p-2 rounded w-full">
-                <input type="text" name="clave" placeholder="Código de la materia" required class="border p-2 rounded w-full mt-2">
+                <label class="block text-gray-700 text-sm mb-1">Nombre de la materia:</label>
+                <input type="text" name="nombre" placeholder="Interactivas" required class="border p-2 rounded w-full">
+                <label class="block text-gray-700 text-sm mb-1 mt-2">Código de la materia:</label>
+                <input type="text" name="clave" placeholder="Clave" required class="border p-2 rounded w-full">
             </div>
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full"> Agregar Materia</button>
         </form>
@@ -17,9 +19,9 @@
         <table class="min-w-full">
             <thead class="bg-gray-50">
                 <tr>
-                    <th class="px-4 py-2 text-left text-sm">Nombre</th>
-                    <th class="px-4 py-2 text-left text-sm">Código</th>
-                    <th class="px-4 py-2 text-left text-sm">Acciones</th>
+                    <th class="text-left px-4 py-2 text-sm font-medium text-gray-700">Nombre</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Código</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Acciones</th>
                 </tr>
             </thead>
             <tbody>

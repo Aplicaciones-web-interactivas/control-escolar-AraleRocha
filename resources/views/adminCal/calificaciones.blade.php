@@ -3,7 +3,6 @@
 <div class="max-w-6xl mx-auto p-6 space-y-6">
     <div class="bg-white shadow-md rounded-lg p-6">
         <h2 class="text-xl font-semibold mb-4">Agregar calificacion</h2>
-
         <form action="{{ route('save.calificacion') }}" method="POST" class="space-y-4">
             @csrf
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -62,13 +61,11 @@
                         </td>
                     </tr>
                     @endforeach
-
                     @if($calificaciones->isEmpty())
                     <tr>
                         <td colspan="6" class="px-4 py-6 text-center text-gray-500">No hay calificaciones registrados.</td>
                     </tr>
                     @endif
-                    
                 </tbody>
             </table>
         </div>
@@ -78,7 +75,6 @@
 <script>
 // Cargar usuarios por grupo para el select de usuarios
 const usuariosPorGrupo = @json($usuariosPorGrupo);
-
 document.getElementById('grupo_id').addEventListener('change', function() {
     const grupoId = this.value;
     const selectUsuarios = document.getElementById('usuario_id');

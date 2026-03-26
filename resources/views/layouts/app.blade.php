@@ -8,38 +8,55 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
-    <nav class="bg-white shadow-md py-4 px-6">
-        <ul class="flex space-x-6">
-            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.materias') }}">Materias</a></li>
-            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.grupos') }}">Grupos</a></li>
-            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.horarios') }}">Horarios</a></li>
-            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.inscripciones') }}">Inscripciones</a></li>
-            <li class="text-gray-700 hover:text-blue-500"><a href="{{ route('index.calificaciones') }}">Calificaciones</a></li>
-                @auth
-                <span class="text-sm font-medium text-gray-600">
-                    <i class="fa-solid fa-user-circle mr-1"></i> {{ Auth::user()->name }}
-                </span>
-                
-                <form method="POST" action="{{ route('logout') }}" class="inline">
-                    @csrf
-                    <button type="submit" class="text-xs bg-red-50 text-red-600 px-3 py-1 rounded hover:bg-red-100 transition">
-                        Cerrar sesión
-                    </button>
-                </form>
-                @endauth
-             @guest
-                <a href="{{ route('login') }}" class="text-gray-700 hover:text-blue-500 text-sm">Iniciar sesión</a>
-                <a href="{{ route('register') }}" class="bg-blue-600 text-white px-4 py-1 rounded-md text-sm hover:bg-blue-700">Registrarse</a>
-            @endguest
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <ul class="flex items-center space-x-6">
+            <li class="text-gray-700 hover:text-blue-500 font-medium transition">
+                <a href="{{ route('index.materias') }}">Materias</a>
+            </li>
+            <li class="text-gray-700 hover:text-blue-500 font-medium transition">
+                <a href="{{ route('index.grupos') }}">Grupos</a>
+            </li>
+            <li class="text-gray-700 hover:text-blue-500 font-medium transition">
+                <a href="{{ route('index.horarios') }}">Horarios</a>
+            </li>
+            <li class="text-gray-700 hover:text-blue-500 font-medium transition">
+                <a href="{{ route('index.inscripciones') }}">Inscripciones</a>
+            </li>
+            <li class="text-gray-700 hover:text-blue-500 font-medium transition">
+                <a href="{{ route('index.calificaciones') }}">Calificaciones</a>
+            </li>
         </ul>
+
         <div class="flex items-center space-x-4">
+            @auth
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-semibold text-gray-600 flex items-center">
+                        <i class="fa-solid fa-user-circle mr-2 text-lg text-blue-500"></i> 
+                        {{ Auth::user()->name }}
+                    </span>
+                    <form method="POST" action="{{ route('logout') }}" class="inline">
+                        @csrf
+                        <button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 shadow-sm hover:shadow-md transition-all duration-200">
+                            Cerrar sesión
+                        </button>
+                    </form>
+                </div>
+            @endauth
 
-
-           
+            @guest
+                <div class="flex items-center space-x-4">
+                    <a href="{{ route('login') }}" class="text-gray-600 hover:text-blue-600 text-sm font-medium transition">
+                        Iniciar sesión
+                    </a>
+                    <a href="{{ route('register') }}" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 shadow-sm hover:shadow-md transition-all duration-200">
+                        Registrarse
+                    </a>
+                </div>
+            @endguest
         </div>
-        </nav>
-        <div class="container mx-auto py-12">
-            @yield('content')
-        </div>
+    </nav>
+    <div class="container mx-auto py-12">
+        @yield('content')
+    </div>
 </body>
 </html>

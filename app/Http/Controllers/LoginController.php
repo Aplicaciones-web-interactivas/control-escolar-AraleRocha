@@ -34,7 +34,7 @@ class loginController extends Controller
         $user->role = 'user';
         $user->save();
 
-        return redirect('/login');
+        return redirect('/admin/home');
     }
 
     public function login(Request $request)

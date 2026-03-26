@@ -41,6 +41,7 @@
                         <!--Solo estos dos, por que para obtener mas datos se neceesitan muchas consultas (Grupos - Horarios - Materias) -->
                         <th class="text-left px-4 py-2 text-sm font-medium text-gray-700">Grupo</th>
                         <th class="text-left px-4 py-2 text-sm font-medium text-gray-700">Usuario</th>
+                        <th class="text-left px-4 py-2 text-sm font-medium text-gray-700">Acciones</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-100">
