@@ -19,6 +19,12 @@ class loginController extends Controller
         return view('register');
     }
 
+    public function showHome()
+    {
+        return view('admin.home');
+    }
+
+
     public function register(Request $request)
     {
         $user = new User();
@@ -28,7 +34,7 @@ class loginController extends Controller
         $user->role = 'user';
         $user->save();
 
-        return redirect('/login');
+        return redirect('/admin/home');
     }
 
     public function login(Request $request)
@@ -41,7 +47,7 @@ class loginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            return redirect('/login');
+            return redirect('/admin/home');
         }
 
         return back()->with('error', 'Clave o contraseña incorrecta o usuario inactivo.')->onlyInput('clave_institucional');
