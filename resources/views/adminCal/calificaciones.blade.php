@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="pt-2">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-sm">Agregar calificacion</button>
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded shadow-sm">Agregar calificacion</button>
             </div>
         </form>
     </div>
@@ -48,8 +48,8 @@
                 <tbody class="bg-white divide-y divide-gray-100">
                     @foreach($calificaciones as $calificacion)
                     <tr class="hover:bg-gray-50">
-                        <td class="px-4 py-2 text-sm text-gray-800">{{ $calificacion->grupo_nombre }}</td>
-                        <td class="px-4 py-2 text-sm text-gray-800">{{ $calificacion->usuario_nombre }}</td>
+                        <td class="px-4 py-2 text-sm text-gray-800">{{ $calificacion->grupo_nombre ?? 'Grupo eliminado'}}</td>
+                        <td class="px-4 py-2 text-sm text-gray-800">{{ $calificacion->usuario_nombre ?? 'Usuario eliminado'}}</td>
                         <td class="px-4 py-2 text-sm text-gray-800">{{ $calificacion->calificacion }}</td>
                         <td class="px-4 py-2 text-sm">
                             <form action="{{ route('delete.calificacion', ['id' => $calificacion->id]) }}" method="POST" style="display: inline;">

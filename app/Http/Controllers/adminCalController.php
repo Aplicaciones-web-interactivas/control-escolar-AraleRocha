@@ -95,8 +95,10 @@ class adminCalController extends Controller
             'users.name as usuario_nombre'
         )
         ->get();
-        //obtener todos los grupos y usuarios para los formularios
-        $users = User::all();
+        //obtener todos los grupos y usuarios para los formularios (solo alumnos)
+        $users = DB::table('users')
+        ->where('role', '=', 'alumno')
+        ->get();
         $grupos = Grupo::all();
         return view('adminCal.inscripciones', [
             'users' => $users, // Regresar listas completas
@@ -128,7 +130,9 @@ class adminCalController extends Controller
             ->select('inscripcions.*', 'grupos.nombre as grupo_nombre', 'users.name as usuario_nombre')
             ->where('inscripcions.id', $id)
             ->first();
-        $users = User::all();
+        $users = DB::table('users')
+        ->where('role', '=', 'alumno')
+        ->get();
         $grupos = Grupo::all();
         if ($calificacion) { //mostrar datos completos para el formulario
             return view('adminCal.modificaInscripcion', [

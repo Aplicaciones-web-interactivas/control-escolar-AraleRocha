@@ -19,7 +19,7 @@
                 <label class="block text-gray-700 text-sm">Calificación:</label>
                 <input type="number" name="calificacion" value="{{ $calificacion->calificacion }}" min="0" max="10" step="0.1" required class="border p-2 rounded w-full">
             </div>
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full">Actualizar calificacion</button>
+            <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded w-full">Actualizar calificacion</button>
         </form>
     </div>
 </div>

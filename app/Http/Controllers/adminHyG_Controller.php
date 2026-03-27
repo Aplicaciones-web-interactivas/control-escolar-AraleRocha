@@ -23,8 +23,10 @@ class adminHyG_Controller extends Controller
             'users.name as usuario_nombre'
         )
         ->get();
-        //obtener todas las materias y usuarios para los formularios
-        $users = User::all();
+        //obtener todas las materias y usuarios para los formularios (solo maestros)
+        $users = DB::table('users')
+        ->where('role', '=', 'maestro')
+        ->get();
         $materias = Materia::all();
         return view('adminHyG.horarios', [
             'users' => $users, // Regresar listas completas
@@ -55,7 +57,9 @@ class adminHyG_Controller extends Controller
     {
         $horario = Horario::find($id);
         if ($horario) { //mostrar datos completos para el formulario
-            $users = User::all();
+            $users = DB::table('users')
+                ->where('role', '=', 'maestro')
+                ->get();
             $materias = Materia::all();
             return view('adminHyG.modificaHorario', [
                 'users' => $users,

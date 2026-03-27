@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="pt-2">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-sm">Agregar Grupo</button>
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded shadow-sm">Agregar Grupo</button>
             </div>
         </form>
     </div>

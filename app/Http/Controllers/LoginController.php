@@ -31,10 +31,10 @@ class loginController extends Controller
         $user->name = $request->name;
         $user->clave_institucional = $request->clave_institucional;
         $user->password = Hash::make($request->password);
-        $user->role = 'user';
+        $user->role = $request->role;
         $user->save();
 
-        return redirect('/admin/home');
+        return redirect('login');
     }
 
     public function login(Request $request)

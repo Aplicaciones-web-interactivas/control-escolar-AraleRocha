@@ -11,7 +11,7 @@
                 <label class="block text-gray-700 text-sm mb-1 mt-2">Código de la materia:</label>
                 <input type="text" name="clave" placeholder="Clave" required class="border p-2 rounded w-full">
             </div>
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full"> Agregar Materia</button>
+            <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded w-full"> Agregar Materia</button>
         </form>
     </div>
     <div class="bg-white shadow rounded p-5 overflow-x-auto">

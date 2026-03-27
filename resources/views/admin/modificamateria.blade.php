@@ -10,7 +10,7 @@
                 <input type="text" name="nombre" value="{{ $materia->nombre }}" placeholder="Nombre de la materia" required class="border p-2 rounded w-full">
                 <input type="text" name="clave" value="{{ $materia->clave }}" placeholder="Código de la materia" required class="border p-2 rounded w-full mt-2">
             </div>
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full">Actualizar Materia</button>
+            <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded w-full">Actualizar Materia</button>
         </form>
     </div>
 </div>

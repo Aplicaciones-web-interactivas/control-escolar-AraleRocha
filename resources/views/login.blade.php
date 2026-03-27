@@ -21,7 +21,7 @@
                 <div class="mb-5">
                     <label class="block text-gray-700 text-sm font-semibold mb-2">Clave Institucional</label>
                     <input type="text" name="clave_institucional" value="{{ old('clave_institucional') }}" required
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200">
                     @error('clave_institucional')
                         <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -30,20 +30,20 @@
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-semibold mb-2">Contraseña</label>
                     <input type="password" name="password" required
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200">
                     @error('password')
                         <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
 
-                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
                     Ingresar
                 </button>
             </form>
 
             <div class="text-center mt-6 text-sm text-gray-600">
-                <p>¿No tienes cuenta? <a href="register" class="text-indigo-600 hover:text-indigo-700 font-semibold">Registrate</a></p>
+                <p>¿No tienes cuenta? <a href="register" class="text-purple-600 hover:text-purple-700 font-semibold">Registrate</a></p>
             </div>
         </div>
     </div>

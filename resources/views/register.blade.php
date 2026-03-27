@@ -22,37 +22,48 @@
                     <label class="block text-gray-700 text-sm font-semibold mb-2">
                         Nombre
                     </label>
-                    <input type="text" name="name" placeholder="Ingresa tu nombre" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                    <input type="text" name="name" placeholder="Ingresa tu nombre" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200"
                     >
                 </div>
                 <div class="mb-5">
                     <label class="block text-gray-700 text-sm font-semibold mb-2">
                         Clave Institucional
                     </label>
-                    <input type="text" name="clave_institucional" placeholder="Ej. A12345"required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+                    <input type="text" name="clave_institucional" placeholder="Ej. A12345"required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200">
                 </div>
                 <div class="mb-5">
                     <label class="block text-gray-700 text-sm font-semibold mb-2">
                         Contraseña
                     </label>
-                    <input type="password" name="password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+                    <input type="password" name="password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200">
                 </div>
 
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-semibold mb-2">
                         Confirmar Contraseña
                     </label>
-                    <input type="password" name="password_confirmation" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+                    <input type="password" name="password_confirmation" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200">
                 </div>
 
-                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                <div class="mb-6"> <!--Se anadio esta parte para poder crear usuarios de ambas categorias sin necesidades de hacerlos en el seeder-->
+                    <lavel class="block text-gray-700 text-sm font-semibold mb-2">
+                        Tipo de usuario
+                    </lavel>
+                    <select name="role" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200">
+                        <option value="">Selecciona un rol</option>
+                        <option value="alumno">Alumno</option>
+                        <option value="maestro">Maestro</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
                     Registrarme
                 </button>
             </form>
             <div class="text-center mt-6 text-sm text-gray-600">
                 <p>
                     ¿Ya tienes cuenta? 
-                    <a href="{{ route('login') }}" class="text-indigo-600 hover:text-indigo-700 font-semibold">
+                    <a href="{{ route('login') }}" class="text-purple-600 hover:text-purple-700 font-semibold">
                         Inicia sesión
                     </a>
                 </p>

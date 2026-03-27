@@ -4,6 +4,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\adminHyG_Controller;
 use App\Http\Controllers\adminCalController;
+use App\Http\Controllers\TareaMaest_Controller;
+use App\Http\Controllers\TareaAlum_Controller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -61,3 +63,18 @@ Route::post('/admin/inscripcion',[adminCalController::class,'saveInscripcion'])-
 Route::delete('/admin/eliminarinscripcion/{id}',[adminCalController::class,'deleteInscripcion'])->name('delete.inscripcion');
 Route::get('/admin/modificarinscripcion/{id}',[adminCalController::class,'editInscripcion'])->name('edit.inscripcion');
 Route::put('/admin/inscripcion/{id}',[adminCalController::class,'updateInscripcion'])->name('update.inscripcion');
+
+// Rutas para tareas
+Route::get('/maestro/tareas', [TareaMaest_Controller::class,'indexMaestro'])->name('index.maestro');
+Route::post('/maestro/tarea', [TareaMaest_Controller::class,'saveTarea'])->name('save.tarea');
+Route::delete('/maestro/eliminartarea/{id}', [TareaMaest_Controller::class,'deleteTarea'])->name('delete.tarea');
+Route::get('/maestro/modificartarea/{id}', [TareaMaest_Controller::class,'editTarea'])->name('edit.tarea');
+Route::put('/maestro/tarea/{id}', [TareaMaest_Controller::class,'updateTarea'])->name('update.tarea');
+// Rutas para ver los entregables de las tareas
+Route::get('/maestro/entregas/{id}',          [TareaMaest_Controller::class, 'verEntregas'])->name('ver.entregas');
+Route::get('/maestro/verentrega/{id}',         [TareaMaest_Controller::class, 'verEntrega'])->name('ver.entrega');
+
+//Rutas para los alumnos
+Route::get('/alumno/tareas', [TareaAlum_Controller::class, 'indexAlumno'])->name('index.alumno');
+Route::get('/alumno/entregar/{id}', [TareaAlum_Controller::class, 'entregarForm'])->name('entregar.tarea');
+Route::post('/alumno/entregar/{id}', [TareaAlum_Controller::class, 'saveEntrega'])->name('save.entrega');

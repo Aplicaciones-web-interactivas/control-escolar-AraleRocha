@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="pt-2">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-sm">Agregar inscripcion</button>
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded shadow-sm">Agregar inscripcion</button>
             </div>
         </form>
     </div>
@@ -47,8 +47,8 @@
                 <tbody class="bg-white divide-y divide-gray-100">
                     @foreach($inscripciones as $inscripcion)
                     <tr class="hover:bg-gray-50">
-                        <td class="px-4 py-2 text-sm text-gray-800">{{ $inscripcion->grupo_nombre }}</td>
-                        <td class="px-4 py-2 text-sm text-gray-800">{{ $inscripcion->usuario_nombre }}</td>
+                        <td class="px-4 py-2 text-sm text-gray-800">{{ $inscripcion->grupo_nombre ?? 'Grupo eliminado'}}</td>
+                        <td class="px-4 py-2 text-sm text-gray-800">{{ $inscripcion->usuario_nombre ?? 'Usuario eliminado'}}</td>
                         <td class="px-4 py-2 text-sm">
                             <form action="{{ route('delete.inscripcion', ['id' => $inscripcion->id]) }}" method="POST" style="display: inline;">
                                 @csrf
