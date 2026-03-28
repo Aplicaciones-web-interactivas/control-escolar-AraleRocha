@@ -16,6 +16,7 @@ class TareaMaest_Controller extends Controller
         $grupos = DB::table('grupos') // Grupos del maestro
             ->join('horarios', 'grupos.horario_id', '=', 'horarios.id')
             ->where('horarios.user_id', $maestroId)
+            ->select('grupos.id', 'grupos.nombre')
             ->get();
         
         $tareas = DB::table('tareas') // Tareas con nombre de grupo
@@ -76,6 +77,7 @@ class TareaMaest_Controller extends Controller
         $grupos = DB::table('grupos') 
             ->join('horarios', 'grupos.horario_id', '=', 'horarios.id')
             ->where('horarios.user_id', $maestroId)
+            ->select('grupos.id', 'grupos.nombre')
             ->get();
  
         if ($tarea){

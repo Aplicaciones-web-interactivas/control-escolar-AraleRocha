@@ -38,7 +38,7 @@
                         <td class="px-4 py-2 text-sm">
                             <a href="{{ route('ver.entrega', ['id' => $entrega->id]) }}"
                                 class="inline-flex items-center gap-1 bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded text-xs">
-                                <i class="fa-solid fa-file-pdf"></i> Ver entrega (PDF)
+                                <i class="fa-solid fa-file"></i> Ver entrega
                             </a>
                         </td>
                     </tr>
